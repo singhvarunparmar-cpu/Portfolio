@@ -76,3 +76,44 @@
 .hero-v3 .scroll-cue{display:none}
 }
 @media(max-width:420px){.hero-v3 h1{font-size:clamp(39px,10.7vw,49px)}.hero-v3 .photo-plate{height:370px;width:285px}.hero-v3 .hero-photo-backdrop{width:285px}}
+
+
+/* 2026-11-15 — Clean circular portrait, face and upper torso visible. */
+.hero-v3 .hero-photo-backdrop,
+.hero-v3 .hero-photo-backdrop::before,
+.hero-v3 .hero-photo-backdrop::after,
+.hero-v3 .hero-bottom-accent { display: none !important; }
+.hero-v3 .hero-portrait-wrap {
+  min-height: 560px;
+  padding: 0;
+  isolation: auto;
+}
+.hero-v3 .photo-plate {
+  width: min(100%, 490px);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  transform: none;
+  background: #fff;
+  border: 0;
+  overflow: hidden;
+  box-shadow: 0 27px 80px rgba(0,0,0,.35);
+}
+.hero-v3 .photo-plate img {
+  display: block;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 50%;
+}
+@media (max-width: 1150px) {
+  .hero-v3 .hero-portrait-wrap { min-height: 460px; }
+  .hero-v3 .photo-plate { width: min(100%, 440px); height: auto; }
+}
+@media (max-width: 760px) {
+  .hero-v3 .hero-portrait-wrap { min-height: auto; margin-bottom: 30px; }
+  .hero-v3 .photo-plate { width: min(78vw, 360px); height: auto; }
+}
+@media (max-width: 420px) {
+  .hero-v3 .photo-plate { width: min(75vw, 300px); height: auto; }
+}
